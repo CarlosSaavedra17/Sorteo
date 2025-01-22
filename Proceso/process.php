@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Crear el comando para ejecutar el script Python
-    $command = escapeshellcmd("python ../mail2.py '$name' '$email' '$password'");
+    $command = escapeshellcmd("python /mail2.py '$name' '$email' '$password'");
     $output = shell_exec($command);
 
     // Verificar si el comando se ejecutó correctamente
