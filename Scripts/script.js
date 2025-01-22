@@ -3,7 +3,7 @@ document.getElementById("phishingForm").addEventListener("submit", function (eve
 
     const formData = new FormData(this);
 
-    fetch("Proceso/process.php", {
+    fetch("../Proceso/process.php", {
         method: "POST",
         body: formData,
     })
@@ -15,7 +15,7 @@ document.getElementById("phishingForm").addEventListener("submit", function (eve
         })
         .then((data) => {
             if (data.status === "success") {
-                window.location.href = "Proceso/confirmacion.html";
+                window.location.href = "../Proceso/confirmacion.html";
             } else {
                 alert(`Error: ${data.message}`);
             }
